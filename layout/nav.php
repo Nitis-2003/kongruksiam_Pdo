@@ -7,16 +7,13 @@
     <div class="collapse navbar-collapse ms-auto" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+          <a class="nav-link text-white" aria-current="page" href="./index.php">show data</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="#">Features</a>
+          <a class="nav-link text-white" href="./addform.php">insert data</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-white" href="#">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled text-white" aria-disabled="true">Disabled</a>
         </li>
       </ul>
     </div>
