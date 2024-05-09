@@ -43,11 +43,42 @@ Class Controller{
         }
     }
 
+    function getDataEmployees($id){
+        try{
+            $sql = "SELECT * FROM employees WHERE emp_id=:emp_id";
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindParam("emp_id",$id);
+            $stmt->execute();
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            return $result;
+        }catch(PDOException $e){
+            echo $e->getMessage();
+            return false;
+        }
+    }
+
     function delete($id){
         try{
             $sql = "DELETE FROM employees WHERE emp_id=:emp_id"; 
             $stmt =$this->db->prepare($sql);
             $stmt->bindParam("emp_id",$id);
+            $stmt->execute();
+            return true;
+        }catch(PDOException $e){
+            echo $e->getMessage();
+            return false;
+        }
+    }
+
+    function updateData($id,$fname,$lname,$salary,$dept_id){
+        try{
+            $sql = "UPDATE employees SET fname=:fname,lname=:lname,salary=:salary,department_id=:department_id WHERE emp_id=:emp_id"; 
+            $stmt =$this->db->prepare($sql);
+            $stmt->bindParam("emp_id",$id);
+            $stmt->bindParam(":fname",$fname);
+            $stmt->bindParam(":lname",$lname);
+            $stmt->bindParam(":salary",$salary);
+            $stmt->bindParam(":department_id",$dept_id);
             $stmt->execute();
             return true;
         }catch(PDOException $e){

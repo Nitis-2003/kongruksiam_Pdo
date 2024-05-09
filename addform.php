@@ -1,5 +1,5 @@
 <?php
-$title = "insert";
+$title = "Insert Data";
 require_once('./layout/header.php');
 require_once('./layout/nav.php');
 require_once('./db/connect.php');

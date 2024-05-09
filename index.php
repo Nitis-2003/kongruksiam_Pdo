@@ -26,7 +26,10 @@ $result = $controller->getEmployees();
                         <td><?php echo $row['lname']; ?></td>
                         <td><?php echo number_format($row['salary']); ?></td>
                         <td><?php echo $row['department_name']; ?></td>
-                        <td><a href="delete.php?id=<?php echo $row['emp_id']; ?>" class="btn btn-danger">ลบข้อมูล</a></td>
+                        <td>
+                            <a href="delete.php?id=<?php echo $row['emp_id']; ?>" class="btn btn-danger" onclick="return confirm('คุณต้องการลบใช่ไหม')">ลบ</a>
+                            <a href="edit.php?id=<?php echo $row['emp_id']; ?>" class="btn btn-warning">แก้ไข</a>
+                        </td>
                     </tr>
                     <?php } ?>
                 </tbody>
