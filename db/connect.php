@@ -15,5 +15,4 @@ require_once'./db/controller.php';
 require_once'./db/user.php';
 $controller = new Controller($conn);
 $user = new User($conn);
-$user->insertUser('admin','999999999');
 ?>

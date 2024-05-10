@@ -12,9 +12,20 @@
         <li class="nav-item">
           <a class="nav-link text-white" href="./addform.php">เพิ่มข้อมูล</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="#">Pricing</a>
+        <?php if(!isset($_SESSION['uid'])) {?>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="./loginform.php">เข้าสู่ระบบ</a>
+          </li>
+        <?php }else{?>
+          <li class="nav-item dropdown">
+          <a class="nav-link  text-white dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            สวัสดี , <?php echo $_SESSION['username'] ?>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="./logout.php">ออกจากระบบ</a></li>
+          </ul>
         </li>
+        <?php }?>
       </ul>
     </div>
   </div>

@@ -9,6 +9,7 @@ $result = $controller->getDepartments();
     <?php require_once('./layout/nav.php'); ?>
     <div class="container mt-3">
         <?php
+
             if(isset($_POST["submit"])){
                 $fname=$_POST["fname"];
                 $lname=$_POST["lname"];
@@ -16,8 +17,7 @@ $result = $controller->getDepartments();
                 $dept_id=$_POST["dept_id"];
                 $status = $controller->insert($fname,$lname,$salary,$dept_id);
                 if($status){
-                    $message = "บันทึกข้อมูลสำเร็จ";
-                    require_once('./layout/success_message.php');
+                    header("location: ./addform.php");
                 }else{
                     $message = "เกิดข้อผิดพลาด บันทึกข้อมูลไม่สำเร็จ";
                     require_once('./layout/error_message.php');

@@ -1,3 +1,4 @@
+<?php require_once './layout/session.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
