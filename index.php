@@ -2,6 +2,7 @@
 $title = "Home";
 require_once('./layout/header.php');
 require_once('./db/connect.php');
+require_once('./layout/chekclogin.php');
 $result = $controller->getEmployees();
 ?>
 

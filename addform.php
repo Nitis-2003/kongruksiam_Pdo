@@ -3,6 +3,7 @@ $title = "Insert Data";
 require_once('./layout/header.php');
 require_once('./layout/nav.php');
 require_once('./db/connect.php');
+require_once('./layout/chekclogin.php');
 $result = $controller->getDepartments();
 ?>
 <body>
